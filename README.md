@@ -72,7 +72,7 @@ The Web Navigator AI Agent processes a user instruction as follows:
 | Error Handling        | Retry and fallback strategies             | ⚡ Planned |
 | Structured Output     | JSON/CSV with optional screenshots        | ✅ |
 | GUI Interface         | React web app for interaction             | ✅ |
-| Voice Input           | Speech-to-command capability              | ⚡ Planned |
+| Voice Input           | Speech-to-command capability              | ✅ |
 
 ---
 
