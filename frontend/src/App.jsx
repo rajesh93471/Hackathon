@@ -164,7 +164,7 @@ function App() {
               <div className="status-dot"></div>
               <span className="status-text">
                 {connectionStatus === "connected" ? "Connected" : 
-                 connectionStatus === "error" ? "Backend Offline" : "Connecting..."}
+                  connectionStatus === "error" ? "Backend Offline" : "Connecting..."}
               </span>
             </div>
           </div>
@@ -217,7 +217,7 @@ function App() {
               <label>Backend Status:</label>
               <div className={`connection-indicator ${connectionStatus}`}>
                 {connectionStatus === "connected" ? "✅ Connected" : 
-                 connectionStatus === "error" ? "❌ Disconnected" : "🔄 Checking..."}
+                  connectionStatus === "error" ? "❌ Disconnected" : "🔄 Checking..."}
               </div>
             </div>
             <button className="close-btn" onClick={() => setShowSettings(false)}>
@@ -347,7 +347,6 @@ function App() {
         </div>
       </section>
 
-      {/* The Results Section now comes before the Features Section */}
       {results.length > 0 && (
         <section className="results-section fade-in" ref={resultsRef}>
           <div className="results-header">
@@ -476,7 +475,30 @@ function App() {
         </section>
       )}
 
-      {/* MOVED: The Features Section is now here, below the results area. */}
+      {loading && (
+        <div className="loading-section fade-in">
+          <div className="loading-content">
+            <div className="loading-animation">
+              <div className="loading-dots">
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+              </div>
+            </div>
+            <p>Searching the web intelligently...</p>
+            <div className="loading-steps">
+              <div className="step">🔍 Searching web...</div>
+              <div className="step">📄 Extracting content...</div>
+              <div className="step">📸 Taking screenshots...</div>
+              <div className="step">🎯 Processing results...</div>
+            </div>
+            <div className="progress-bar">
+              <div className="progress-fill"></div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <section className="features-section">
         <div className="features-header">
           <h2>Powerful AI-Driven Features</h2>
@@ -522,30 +544,6 @@ function App() {
           </div>
         </div>
       </section>
-
-      {loading && (
-        <div className="loading-section fade-in">
-          <div className="loading-content">
-            <div className="loading-animation">
-              <div className="loading-dots">
-                <div className="dot"></div>
-                <div className="dot"></div>
-                <div className="dot"></div>
-              </div>
-            </div>
-            <p>Searching the web intelligently...</p>
-            <div className="loading-steps">
-              <div className="step">🔍 Searching web...</div>
-              <div className="step">📄 Extracting content...</div>
-              <div className="step">📸 Taking screenshots...</div>
-              <div className="step">🎯 Processing results...</div>
-            </div>
-            <div className="progress-bar">
-              <div className="progress-fill"></div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {connectionStatus === "error" && (
         <div className="connection-warning fade-in">
